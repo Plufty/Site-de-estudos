@@ -1,0 +1,290 @@
+:root /*Paleta de Cores*/
+{
+    --white: #ffffff;
+    --red: #ff0000;
+    --middleBlue: #575ca1;
+    --middleBlack: #151515;
+}
+
+body 
+{
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--middleBlue);
+    padding: 100px;
+    font-size: 14px;
+    color: var(--middleBlack);
+    overflow-x: hidden;
+}
+
+.tela-toda/*Classe responsável por determinar o tamanho da área com conteúdo e a centralizar nan tela, esta será herdada por todo o código*/
+{
+    max-width: 980px;
+    margin: 0 auto;/*Center the container horizontally in the middle of the page.*/
+}
+
+/* ======================== */
+.container 
+{
+    padding: 12px;
+}
+
+.navbar 
+{
+    display: flex;
+    flex-wrap: wrap;
+    /*Allows the children inside a flex container to wrap down onto the next line if there is not enough space.*/
+    align-items: center;
+    /*Centers the children of a flex container vertically.*/
+    justify-content: space-between;
+    /*Adds space between each child of a flex container.*/
+    background-color: var(--white);
+    padding-block: 15px;
+    /*Padding top and bottom*/
+}
+
+.navbar a 
+{
+    text-decoration: none;
+    color: inherit;
+    /*Inherits the same color as the parent element or grandparent (the body) unless you set the color to the navbar.*/
+}
+
+.logo 
+{
+    margin-right: 50px;
+}
+
+.list 
+{
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    /*Applies right and bottom spacing between children inside a flex or grid container.*/
+}
+
+#toggler, .navbar label 
+{
+    display: none;
+    /*Hide the checkbox and label on large screens.*/
+}
+
+
+
+
+/*Footer*/
+.lateral 
+{
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.8);
+    display: inline-block;
+    cursor: pointer;
+    pointer-events: none;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+.lateral:hover 
+{
+    pointer-events: all;
+}
+
+.nome-menu 
+{
+    display: inline-block;
+    cursor: pointer;
+    pointer-events: all;
+}
+
+.spacer 
+{
+    display: inline-block;
+    width: 80px;
+    margin-left: 15px;
+    margin-right: 15px;
+    vertical-align: middle;
+    cursor: pointer;
+    position: relative;
+}
+
+.spacer:before 
+{
+    content: "";
+    position: absolute;
+    border-bottom: 1px solid var(--white);
+    height: 1px;
+    width: 0%;
+    transition: width 0.25s ease;
+    transition-delay: 0.7s;
+}
+
+.item 
+{
+    position: relative;
+    display: inline-block;
+    margin-right: 30px;
+    top: 10px;
+    opacity: 0;
+    transition: opacity 0.5s ease, top 0.5s ease;
+    transition-delay: 0;
+}
+
+span 
+{
+    transition: color 0.5s ease;
+}
+
+.item:hover span 
+{
+    color: var(--red);
+}
+
+.lateral:hover .spacer:before 
+{
+    width: 100%;
+    transition-delay: 0s;
+}
+
+.lateral:hover .item 
+{
+    opacity: 1;
+    top: 0px;
+}
+
+.item:nth-child(1) 
+{
+    transition-delay: 0.45s;
+}
+
+.item:nth-child(2) 
+{
+    transition-delay: 0.4s;
+}
+
+.item:nth-child(3) 
+{
+    transition-delay: 0.35s;
+}
+
+.item:nth-child(4) 
+{
+    transition-delay: 0.3s;
+}
+
+.item:nth-child(5) 
+{
+    transition-delay: 0.25s;
+}
+
+.item:nth-child(6) 
+{
+    transition-delay: 0.2s;
+}
+
+.item:nth-child(7) 
+{
+    transition-delay: 0.15s;
+}
+
+.item:nth-child(8) 
+{
+    transition-delay: 0.1s;
+}
+
+.item:nth-child(9) 
+{
+    transition-delay: 0.05s;
+}
+
+.item:nth-child(10) 
+{
+    transition-delay: 0s;
+}
+
+.lateral:hover .item:nth-child(1) 
+{
+    transition-delay: 0.25s;
+}
+
+.lateral:hover .item:nth-child(2) 
+{
+    transition-delay: 0.3s;
+}
+
+.lateral:hover .item:nth-child(3) 
+{
+    transition-delay: 0.35s;
+}
+
+.lateral:hover .item:nth-child(4) 
+{
+    transition-delay: 0.4s;
+}
+
+.lateral:hover .item:nth-child(5) 
+{
+    transition-delay: 0.45s;
+}
+
+.lateral:hover .item:nth-child(6) 
+{
+    transition-delay: 0.5s;
+}
+
+.lateral:hover .item:nth-child(7) 
+{
+    transition-delay: 0.55s;
+}
+
+.lateral:hover .item:nth-child(8) 
+{
+    transition-delay: 0.6s;
+}
+
+.lateral:hover .item:nth-child(9) 
+{
+    transition-delay: 0.65s;
+}
+
+.lateral:hover .item:nth-child(10) 
+{
+    transition-delay: 0.7s;
+}
+
+/*Breakpoint set at 600px, once it is 600px or smaller the layout changes to use the following styles overriding the old ones.*/
+@media screen and (max-width: 600px) 
+{
+    .menu 
+    {
+        width: 100%;
+        max-height: 0;
+        /*Makes the max-height 0 to side the expanded menu.*/
+        overflow: hidden;
+        /*Hides the overflowing content.*/
+    }
+
+    .list 
+    {
+        flex-direction: column;
+        /*Chances the direction of the flex container. By default it is a row so we change it to column in small screens.*/
+        align-items: center;
+        padding: 20px;
+    }
+
+    .navbar label 
+    {
+        display: inline-flex;
+        /*Makes it an inline flex container for the icon. Used for centering the icon inside this box.*/
+        align-items: center;
+        cursor: pointer;
+    }
+
+    /* 
+        The general sibling selector (~) selects all elements that are next siblings of #toggler.
+        In this case we target the .menu and we turn the height back to 100% to show the menu.
+    */
+    #toggler:checked~.menu 
+    {
+        max-height: 100%;
+    }
+}
